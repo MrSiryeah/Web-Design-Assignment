@@ -222,7 +222,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =========================================================
-   Chunk 2C: Home hero – base layout only
+   Home hero – base layout only
    NOTE: visual effects + background added later
 ========================================================= */
 
@@ -257,4 +257,39 @@ a{ color:inherit; text-decoration:none; }
   margin: .75rem 0 0;
   max-width: 40ch;
   opacity: 0.85;
+}
+
+/* =========================================================
+   Button styles (base only)
+   NOTE: hover polish added later
+========================================================= */
+
+.btn{
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: var(--fw-semibold);
+  font-size: .95rem;
+  line-height: 1;
+  transition: background var(--t-med) var(--ease),
+              color var(--t-med) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+
+.hero__actions{
+  display: flex;
+  gap: .75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn--primary{
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+.btn--ghost{
+  background: transparent;
+  color: var(--c-navy);
+  border: 1px solid rgba(0,0,0,.15);
 }
