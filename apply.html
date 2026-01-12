@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCAST Refresh | Apply</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Go to Home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span class="brand__text">MCAST REFRESH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <div class="nav__links">
+            <a class="nav__link" href="index.html">Home</a>
+            <a class="nav__link" href="contact.html">Contact us</a>
+            <a class="nav__link" href="apply.html" aria-current="page">Apply</a>
+            <a class="nav__link" href="student-info.html">Student’s Info</a>
+            <a class="nav__link" href="explore.html">Explore</a>
+          </div>
+
+          <input class="nav-toggle" type="checkbox" id="navToggle" />
+          <label class="icon-btn burger" for="navToggle" aria-label="Open menu">☰</label>
+
+          <div class="mobile-panel">
+            <div class="mobile-panel__links" aria-label="Mobile navigation">
+              <a href="index.html">Home</a>
+              <a href="contact.html">Contact us</a>
+              <a href="apply.html">Apply</a>
+              <a href="student-info.html">Student’s Info</a>
+              <a href="explore.html">Explore</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+
+      <!-- Apply hero -->
+      <section class="hero" aria-labelledby="apply-title">
+        <div class="hero__glass">
+          <h1 id="apply-title" class="hero__title">APPLY</h1>
+          <p class="hero__subtitle">
+            Start your application. If you’re not sure yet, we’ll help you choose the right course.
+          </p>
+        </div>
+        <div class="hero__media" aria-hidden="true"></div>
+      </section>
+
+      <!-- Apply layout -->
+      <section class="apply" aria-label="Application form">
+        <div class="apply__grid">
+
+          <!-- Main form -->
+          <div class="apply__form">
+            <h2 class="apply__heading">Your details</h2>
+            <p class="apply__lead">Fill in the basics. You can review everything before submitting.</p>
+
+            <form class="form" action="#" method="post">
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="firstName">First name</label>
+                  <input class="field__input" type="text" id="firstName" name="firstName" placeholder="e.g. Sarah" required />
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="lastName">Last name</label>
+                  <input class="field__input" type="text" id="lastName" name="lastName" placeholder="e.g. Borg" required />
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="email">Email</label>
+                  <input class="field__input" type="email" id="email" name="email" placeholder="you@example.com" required />
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="phone">Mobile number</label>
+                  <input class="field__input" type="tel" id="phone" name="phone" placeholder="+356 7XXX XXXX" />
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="studentType">I am a</label>
+                  <select class="field__input" id="studentType" name="studentType" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Prospective student</option>
+                    <option>International student</option>
+                    <option>Parent / Guardian</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="studyMode">Study mode</label>
+                  <select class="field__input" id="studyMode" name="studyMode" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Full-time</option>
+                    <option>Part-time</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="courseInterest">Course / subject you’re interested in</label>
+                <input class="field__input" type="text" id="courseInterest" name="courseInterest" placeholder="e.g. Interactive Digital Media, Business, Engineering..." />
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="message">Anything we should know?</label>
+                <textarea class="field__input field__textarea" id="message" name="message" rows="5" placeholder="Tell us what you’re looking for, your current level, or any questions."></textarea>
+              </div>
+
+              <label class="check">
+                <input class="check__box" type="checkbox" required />
+                <span class="check__text">I confirm the information above is correct.</span>
+              </label>
+
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">Continue</button>
+                <a class="btn btn--ghost" href="explore.html">Browse courses</a>
+              </div>
+            </form>
+          </div>
+
+          <!-- Sidebar help -->
+          <aside class="apply__side" aria-label="Application help">
+            <div class="side-card">
+              <h2 class="side-card__title">Before you apply</h2>
+              <ul class="side-card__list">
+                <li>Check entry requirements for your course.</li>
+                <li>Have your ID and certificates ready.</li>
+                <li>If unsure, explore institutes first.</li>
+              </ul>
+              <a class="side-card__link" href="explore.html">Explore courses</a>
+            </div>
+
+            <div class="side-card">
+              <h2 class="side-card__title">Need help?</h2>
+              <p class="side-card__text">
+                Contact us and we’ll guide you through the process.
+              </p>
+              <a class="side-card__link" href="contact.html">Contact support</a>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
