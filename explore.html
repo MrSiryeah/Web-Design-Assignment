@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCAST Refresh | Explore</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Go to Home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span class="brand__text">MCAST REFRESH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <div class="nav__links">
+            <a class="nav__link" href="index.html">Home</a>
+            <a class="nav__link" href="contact.html">Contact us</a>
+            <a class="nav__link" href="apply.html">Apply</a>
+            <a class="nav__link" href="student-info.html">Student’s Info</a>
+            <a class="nav__link" href="explore.html" aria-current="page">Explore</a>
+          </div>
+
+          <input class="nav-toggle" type="checkbox" id="navToggle" />
+          <label class="icon-btn burger" for="navToggle" aria-label="Open menu">☰</label>
+
+          <div class="mobile-panel">
+            <div class="mobile-panel__links" aria-label="Mobile navigation">
+              <a href="index.html">Home</a>
+              <a href="contact.html">Contact us</a>
+              <a href="apply.html">Apply</a>
+              <a href="student-info.html">Student’s Info</a>
+              <a href="explore.html">Explore</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+
+      <!-- Explore hero (prospective students) -->
+      <section class="hero" aria-labelledby="explore-title">
+        <div class="hero__glass">
+          <h1 id="explore-title" class="hero__title">EXPLORE</h1>
+          <p class="hero__subtitle">Our Courses to find your next chapter.</p>
+        </div>
+        <div class="hero__media" aria-hidden="true"></div>
+      </section>
+
+      <!-- Rotating course options (no JS) -->
+      <section class="course-rotator" aria-label="Quick course choices">
+        <span class="rotator-ui" aria-hidden="true">↔</span>
+
+        <input class="rotator-radio" type="radio" name="rotator" id="r-part" />
+        <input class="rotator-radio" type="radio" name="rotator" id="r-full" checked />
+        <input class="rotator-radio" type="radio" name="rotator" id="r-apply" />
+
+        <div class="rotator-track">
+          <label class="rotator-card" for="r-part">
+            <span class="rotator-card__text">Part - Time<br />Courses</span>
+          </label>
+
+          <label class="rotator-card" for="r-full">
+            <span class="rotator-card__text">Full - Time<br />Courses</span>
+          </label>
+
+          <label class="rotator-card" for="r-apply">
+            <span class="rotator-card__text">Apply<br />Online</span>
+          </label>
+        </div>
+
+        <p class="rotator-hint">Select a card to focus it.</p>
+      </section>
+
+      <!-- Next section will be the Explore content grid (we’ll style later) -->
+      <section class="explore-grid" aria-label="Browse course categories">
+        <article class="explore-card">
+          <h2 class="explore-card__title">Find a course</h2>
+          <p class="explore-card__text">Browse by institute, level, or subject area.</p>
+          <a class="explore-card__link" href="#">Browse courses</a>
+        </article>
+
+        <article class="explore-card">
+          <h2 class="explore-card__title">Entry requirements</h2>
+          <p class="explore-card__text">See what you need for each programme.</p>
+          <a class="explore-card__link" href="#">View requirements</a>
+        </article>
+
+        <article class="explore-card">
+          <h2 class="explore-card__title">Student life</h2>
+          <p class="explore-card__text">Support, campuses, facilities, and services.</p>
+          <a class="explore-card__link" href="#">Discover student life</a>
+        </article>
+
+        <article class="explore-card">
+          <h2 class="explore-card__title">Download prospectus</h2>
+          <p class="explore-card__text">Get the latest prospectus for 2025–2026.</p>
+          <a class="explore-card__link" href="#">Download</a>
+        </article>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
