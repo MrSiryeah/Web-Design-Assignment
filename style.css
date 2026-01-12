@@ -1,5 +1,4 @@
 /* =========================================================
-   Chunk 1B: Base tokens + reset + header/nav styling
    TODO next: mobile menu behaviour + hero section
 ========================================================= */
 
@@ -144,3 +143,79 @@ a{ color:inherit; text-decoration:none; }
 /* Mobile items not active yet */
 .burger{ display:none; }
 .mobile-panel{ display:none; }
+
+/* =========================================================
+   Responsive navigation (mobile)
+   TODO: animate panel open/close
+========================================================= */
+
+@media (max-width: 860px){
+  .nav__links{
+    display:none;
+  }
+
+  .burger{
+    display:inline-grid;
+  }
+
+  .mobile-panel{
+    display:block;
+    padding-bottom:var(--space-2);
+  }
+
+  .mobile-panel__links{
+    display:grid;
+    gap:.5rem;
+  }
+
+  .mobile-panel__links a{
+    padding:.8rem 1rem;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);
+  }
+}
+
+/* =========================================================
+    Mobile nav toggle using checkbox
+========================================================= */
+
+.nav-toggle{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* Default: keep mobile panel hidden unless toggled (mobile only) */
+.mobile-panel{
+  display:none;
+}
+
+@media (max-width: 860px){
+  .nav__links{ display:none; }
+  .burger{ display:inline-grid; }
+
+  /* Only show panel when checkbox is checked */
+  .nav-toggle:checked ~ .mobile-panel{
+    display:block;
+    padding-bottom:var(--space-2);
+  }
+
+  .mobile-panel__links{
+    display:grid;
+    gap:.5rem;
+  }
+
+  .mobile-panel__links a{
+    padding:.8rem 1rem;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);
+  }
+}

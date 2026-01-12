@@ -37,14 +37,15 @@
             🔍
           </button>
 
-          <button class="icon-btn burger" type="button" aria-label="Open menu" aria-expanded="false">
+          <input class="nav-toggle" type="checkbox" id="navToggle" />
+          <label class="icon-btn burger" for="navToggle" aria-label="Open menu">
             ☰
-          </button>
+          </label>
         </nav>
       </div>
 
       <!-- Mobile panel (we’ll wire this up with JS in a later step) -->
-      <div class="mobile-panel" hidden>
+    <div class="mobile-panel">
         <div class="mobile-panel__links" aria-label="Mobile navigation">
           <a href="index.html" aria-current="page">Home</a>
           <a href="contact.html">Contact us</a>
