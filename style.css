@@ -322,3 +322,99 @@ a{ text-decoration:none; color:inherit; }
     border:1px solid rgba(255,255,255,.14);
   }
 }
+
+/* =========================
+   Home page hero
+   ========================= */
+
+.home-hero{
+  position: relative;
+  margin-top: var(--space-4);
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+.home-hero__media{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,67,.85),
+      rgba(0,0,67,.55)
+    ),
+    url("images/home-hero.jpg") center / cover no-repeat;
+  z-index: -1;
+}
+
+.home-hero__content{
+  max-width: 520px;
+  padding: var(--space-4);
+  color: var(--c-white);
+}
+
+.home-hero__title{
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: var(--fw-bold);
+}
+
+.home-hero__subtitle{
+  margin-top: var(--space-2);
+  font-size: 1.15rem;
+  opacity: .9;
+}
+
+.home-hero__actions{
+  margin-top: var(--space-3);
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Home quick tiles
+   ========================= */
+
+.home-tiles{
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.home-tile{
+  display: block;
+  padding: var(--space-3);
+  border-radius: 18px;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  transition:
+    transform var(--t-med) var(--ease),
+    box-shadow var(--t-med) var(--ease);
+}
+
+.home-tile:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.12);
+}
+
+.home-tile__title{
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: var(--fw-semibold);
+}
+
+.home-tile__text{
+  margin-top: .4rem;
+  opacity: .75;
+}
+
+/* Desktop layout */
+@media (min-width: 900px){
+  .home-tiles{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
