@@ -418,3 +418,56 @@ a{ text-decoration:none; color:inherit; }
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* =========================
+   Explore page cards
+   ========================= */
+
+.explore-grid{
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.explore-card{
+  padding: var(--space-3);
+  border-radius: 18px;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  transition:
+    transform var(--t-med) var(--ease),
+    box-shadow var(--t-med) var(--ease);
+}
+
+.explore-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.12);
+}
+
+.explore-card__title{
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: var(--fw-semibold);
+}
+
+.explore-card__text{
+  margin: .5rem 0 1rem 0;
+  opacity: .75;
+  max-width: 55ch;
+}
+
+.explore-card__link{
+  display: inline-block;
+  padding: .55rem 1rem;
+  border-radius: 999px;
+  background: rgba(0,0,67,.08);
+  border: 1px solid rgba(0,0,67,.15);
+  font-weight: var(--fw-semibold);
+}
+
+/* Desktop */
+@media (min-width: 900px){
+  .explore-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
