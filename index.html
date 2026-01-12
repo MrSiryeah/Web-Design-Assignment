@@ -57,15 +57,56 @@
     </div>
   </header>
 
-  <!-- =========================
-       Main (placeholder)
-       TODO: build hero + tiles next chunks
-  ========================== -->
-  <main class="page">
+    <main class="page">
     <div class="container">
-      <h1>Home</h1>
-      <p>Scaffold in place. Next: global CSS + header styling.</p>
+
+        <!-- =========================
+            Home Hero (HTML only)
+            Chunk 2A: structure + content
+            TODO: add background image + glass styling in CSS
+        ========================== -->
+        <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__glass">
+            <p class="hero__kicker">Welcome to</p>
+            <h1 id="hero-title" class="hero__title">MCAST</h1>
+            <p class="hero__subtitle">
+            Discover full-time & part-time courses and take the next step in your future.
+            </p>
+
+            <div class="hero__actions">
+            <a class="btn btn--primary" href="apply.html">Apply Now</a>
+            <a class="btn btn--ghost" href="explore.html">Explore Courses</a>
+            </div>
+        </div>
+
+        <!-- Background image container (image added later in CSS or as <img>) -->
+        <div class="hero__media" aria-hidden="true"></div>
+        </section>
+
+        <!-- =========================
+            Quick Tiles (HTML only)
+            Chunk 2B: first pass tiles
+            TODO: match exact layout + icons from Figma
+        ========================== -->
+        <section class="tiles" aria-label="Quick links">
+        <a class="tile" href="explore.html">
+            <h2 class="tile__title">Explore</h2>
+            <p class="tile__text">Browse institutes & courses.</p>
+        </a>
+
+        <a class="tile" href="apply.html">
+            <h2 class="tile__title">Apply</h2>
+            <p class="tile__text">Start your application online.</p>
+        </a>
+
+        <a class="tile" href="student-info.html">
+            <h2 class="tile__title">Student’s Info</h2>
+            <p class="tile__text">Timetables, support & resources.</p>
+        </a>
+        </section>
+
     </div>
-  </main>
+    </main>
+
 </body>
 </html>
