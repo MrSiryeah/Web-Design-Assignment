@@ -5,108 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCAST Refresh | Home</title>
 
-  <!-- Global stylesheet (we’ll add next step) -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- =========================
-       Header / Navigation
-       Chunk 1A: basic structure
-       TODO: add styling + mobile menu JS
-  ========================== -->
   <header class="site-header">
     <div class="container">
       <div class="topbar">
-        <a class="brand" href="index.html" aria-label="Go to Home">
-          <span class="brand__mark" aria-hidden="true">M</span>
+        <a class="brand" href="index.html">
+          <span class="brand__mark">M</span>
           <span class="brand__text">MCAST REFRESH</span>
         </a>
 
-        <nav class="nav" aria-label="Primary navigation">
+        <nav class="nav">
           <div class="nav__links">
-            <a class="nav__link" href="index.html" aria-current="page">Home</a>
-            <a class="nav__link" href="contact.html">Contact us</a>
-            <a class="nav__link" href="apply.html">Apply</a>
-            <a class="nav__link" href="student-info.html">Student’s Info</a>
-            <a class="nav__link" href="explore.html">Explore</a>
+            <a class="nav__link" aria-current="page">Home</a>
+            <a class="nav__link" href="#">Contact us</a>
+            <a class="nav__link" href="#">Apply</a>
+            <a class="nav__link" href="#">Student’s Info</a>
+            <a class="nav__link" href="#">Explore</a>
           </div>
 
-          <!-- Placeholders to match your mockup -->
-          <button class="icon-btn" type="button" aria-label="Search (coming soon)">
-            🔍
-          </button>
-
           <input class="nav-toggle" type="checkbox" id="navToggle" />
-          <label class="icon-btn burger" for="navToggle" aria-label="Open menu">
-            ☰
-          </label>
+          <label class="icon-btn burger" for="navToggle">☰</label>
         </nav>
       </div>
 
-      <!-- Mobile panel (we’ll wire this up with JS in a later step) -->
-    <div class="mobile-panel">
-        <div class="mobile-panel__links" aria-label="Mobile navigation">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="contact.html">Contact us</a>
-          <a href="apply.html">Apply</a>
-          <a href="student-info.html">Student’s Info</a>
-          <a href="explore.html">Explore</a>
+      <div class="mobile-panel">
+        <div class="mobile-panel__links">
+          <a>Home</a>
+          <a>Contact us</a>
+          <a>Apply</a>
+          <a>Student’s Info</a>
+          <a>Explore</a>
         </div>
       </div>
     </div>
   </header>
 
-    <main class="page">
+  <main class="page">
     <div class="container">
 
-        <!-- =========================
-            Home Hero (HTML only)
-            Chunk 2A: structure + content
-            TODO: add background image + glass styling in CSS
-        ========================== -->
-        <section class="hero" aria-labelledby="hero-title">
+      <section class="hero">
         <div class="hero__glass">
-            <p class="hero__kicker">Welcome to</p>
-            <h1 id="hero-title" class="hero__title">MCAST</h1>
-            <p class="hero__subtitle">
-            Discover full-time & part-time courses and take the next step in your future.
-            </p>
+          <h1 class="hero__title">EXPLORE</h1>
+          <p class="hero__subtitle">
+            Our Courses to find your next chapter.
+          </p>
+        </div>
+        <div class="hero__media"></div>
+      </section>
 
-            <div class="hero__actions">
-            <a class="btn btn--primary" href="apply.html">Apply Now</a>
-            <a class="btn btn--ghost" href="explore.html">Explore Courses</a>
-            </div>
+      <section class="course-rotator">
+        <span class="rotator-ui">↔</span>
+
+        <input class="rotator-radio" type="radio" name="rotator" id="r-part">
+        <input class="rotator-radio" type="radio" name="rotator" id="r-full" checked>
+        <input class="rotator-radio" type="radio" name="rotator" id="r-apply">
+
+        <div class="rotator-track">
+          <label class="rotator-card" for="r-part">
+            <span class="rotator-card__text">Part - Time<br>Courses</span>
+          </label>
+
+          <label class="rotator-card" for="r-full">
+            <span class="rotator-card__text">Full - Time<br>Courses</span>
+          </label>
+
+          <label class="rotator-card" for="r-apply">
+            <span class="rotator-card__text">Apply<br>Online</span>
+          </label>
         </div>
 
-        <!-- Background image container (image added later in CSS or as <img>) -->
-        <div class="hero__media" aria-hidden="true"></div>
-        </section>
-
-        <!-- =========================
-            Quick Tiles (HTML only)
-            Chunk 2B: first pass tiles
-            TODO: match exact layout + icons from Figma
-        ========================== -->
-        <section class="tiles" aria-label="Quick links">
-        <a class="tile" href="explore.html">
-            <h2 class="tile__title">Explore</h2>
-            <p class="tile__text">Browse institutes & courses.</p>
-        </a>
-
-        <a class="tile" href="apply.html">
-            <h2 class="tile__title">Apply</h2>
-            <p class="tile__text">Start your application online.</p>
-        </a>
-
-        <a class="tile" href="student-info.html">
-            <h2 class="tile__title">Student’s Info</h2>
-            <p class="tile__text">Timetables, support & resources.</p>
-        </a>
-        </section>
+        <p class="rotator-hint">Tap a card to focus it.</p>
+      </section>
 
     </div>
-    </main>
-
+  </main>
 </body>
 </html>

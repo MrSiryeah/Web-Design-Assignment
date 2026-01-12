@@ -1,116 +1,88 @@
-/* =========================================================
-   Base tokens + reset + header/nav styling
-   TODO next: mobile menu behaviour + hero section
-========================================================= */
-
 :root{
-  /* Palette (from your style guide) */
   --c-white:#ffffff;
   --c-navy:#000043;
-  --c-black:#000000;
-  --c-blue:#3d6dad;
-
-  /* Neutrals */
   --c-ink:#0b1020;
-  --c-line:rgba(0,0,0,.10);
+  --c-line:rgba(0,0,0,.1);
 
-  /* Typography */
-  --font-body:"Stack Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --fw-regular:400;
   --fw-semibold:600;
   --fw-bold:800;
 
-  /* Spacing scale */
   --space-1:.5rem;
   --space-2:1rem;
   --space-3:2rem;
+  --space-4:3rem;
 
-  /* Layout */
   --container:1100px;
-  --radius-pill:999px;
 
-  /* Motion */
   --ease:cubic-bezier(.2,.8,.2,1);
   --t-fast:140ms;
   --t-med:240ms;
 }
 
-/* --- Minimal reset --- */
 *,
 *::before,
 *::after{ box-sizing:border-box; }
 
 body{
   margin:0;
-  font-family:var(--font-body);
-  color:var(--c-ink);
+  font-family:system-ui, sans-serif;
   background:var(--c-white);
+  color:var(--c-ink);
 }
 
-a{ color:inherit; text-decoration:none; }
+a{ text-decoration:none; color:inherit; }
 
 .container{
-  width:min(var(--container), calc(100% - (var(--space-3) * 2)));
-  margin-inline:auto;
+  width:min(var(--container), calc(100% - 4rem));
+  margin:auto;
 }
 
-/* =========================================================
-   Header / Nav
-========================================================= */
-
+/* Header */
 .site-header{
   background:var(--c-navy);
-  color:var(--c-white);
+  color:white;
 }
 
 .topbar{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:var(--space-2);
-  padding:var(--space-2) 0;
+  align-items:center;
+  padding:1rem 0;
 }
 
 .brand{
-  display:inline-flex;
+  display:flex;
   align-items:center;
-  gap:var(--space-2);
+  gap:.75rem;
+  font-weight:var(--fw-bold);
 }
 
 .brand__mark{
-  width:42px;
-  height:42px;
-  border-radius:var(--radius-pill);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:rgba(255,255,255,.15);
   display:grid;
   place-items:center;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.16);
-  font-weight:var(--fw-bold);
-}
-
-.brand__text{
-  font-weight:var(--fw-bold);
-  letter-spacing:.5px;
 }
 
 .nav{
   display:flex;
   align-items:center;
-  gap:var(--space-1);
+  gap:.75rem;
 }
 
 .nav__links{
   display:flex;
   align-items:center;
-  gap:.25rem;
+  gap:.5rem;
 }
 
 .nav__link{
-  padding:.65rem .9rem;
-  border-radius:var(--radius-pill);
-  font-weight:var(--fw-semibold);
+  padding:.5rem .9rem;
+  border-radius:999px;
   transition:background var(--t-med) var(--ease), transform var(--t-fast) var(--ease);
-  opacity:.95;
 }
 
 .nav__link:hover{
@@ -120,97 +92,227 @@ a{ color:inherit; text-decoration:none; }
 
 .nav__link[aria-current="page"]{
   background:rgba(255,255,255,.16);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);
 }
 
 .icon-btn{
   width:42px;
   height:42px;
-  border-radius:var(--radius-pill);
-  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
   background:rgba(255,255,255,.08);
-  color:var(--c-white);
+  color:#fff;
   display:inline-grid;
   place-items:center;
   cursor:pointer;
-  transition:transform var(--t-fast) var(--ease), background var(--t-med) var(--ease);
 }
 
-.icon-btn:hover{
-  background:rgba(255,255,255,.12);
-  transform:translateY(-1px);
-}
-
-/* Mobile items not active yet */
-.burger{ display:none; }
-.mobile-panel{ display:none; }
-
-/* =========================================================
-   Responsive navigation (mobile)
-   TODO: animate panel open/close
-========================================================= */
-
-@media (max-width: 860px){
-  .nav__links{
-    display:none;
-  }
-
-  .burger{
-    display:inline-grid;
-  }
-
-  .mobile-panel{
-    display:block;
-    padding-bottom:var(--space-2);
-  }
-
-  .mobile-panel__links{
-    display:grid;
-    gap:.5rem;
-  }
-
-  .mobile-panel__links a{
-    padding:.8rem 1rem;
-    border-radius:12px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.14);
-  }
-}
-
-/* =========================================================
-    Mobile nav toggle using checkbox
-========================================================= */
-
+/* Hide checkbox visually */
 .nav-toggle{
   position:absolute;
   width:1px;
   height:1px;
-  padding:0;
-  margin:-1px;
   overflow:hidden;
   clip:rect(0,0,0,0);
   white-space:nowrap;
-  border:0;
 }
 
-/* Default: keep mobile panel hidden unless toggled (mobile only) */
-.mobile-panel{
+/* Burger hidden on desktop */
+.burger{
   display:none;
 }
 
+/* Mobile menu (hidden by default) */
+.mobile-panel{
+  display:none;
+  width:100%;
+  margin-top:.75rem;
+}
+
+/* Page */
+.page{ padding:3rem 0; }
+
+/* Hero */
+.hero{
+  position:relative;
+  min-height:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3rem 2rem;
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(0,0,67,.9),rgba(0,0,67,.6));
+  color:#fff;
+  overflow:hidden;
+}
+
+.hero__glass{
+  max-width:520px;
+  width:min(620px, 92%);
+  padding:2rem;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border-radius:18px;
+  text-align:center;
+}
+
+.hero__title{
+  margin:0;
+  font-size:3rem;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+
+.hero__subtitle{
+  margin:.5rem 0 0;
+  font-size:1.25rem;
+}
+
+.hero__media{
+  position:absolute;
+  inset:0;
+  background:url("images/hero.jpg") center/cover no-repeat;
+  opacity:.25;
+  z-index:-1;
+}
+
+/* Rotator (no JS)
+   Selected card stays centered; others slide left/right */
+
+.course-rotator{
+  margin-top:4rem;
+  text-align:center;
+}
+
+.rotator-ui{
+  display:inline-block;
+  opacity:.7;
+  margin-bottom:1rem;
+}
+
+/* hide radios */
+.rotator-radio{
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+}
+
+/* stage that stays centered */
+.rotator-track{
+  --shift: clamp(180px, 22vw, 320px);
+  position: relative;
+  width: min(980px, 100%);
+  height: 360px;
+  margin: 0 auto;
+}
+
+/* cards are positioned around the center */
+.rotator-card{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width: 300px;
+  height: 300px;
+  display:grid;
+  place-items:center;
+  background:var(--c-navy);
+  color:#fff;
+  border-radius:10px;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 18px 40px rgba(0,0,0,.15);
+  transition:transform var(--t-med) var(--ease),
+             filter var(--t-med) var(--ease),
+             opacity var(--t-med) var(--ease);
+}
+
+/* default = blurred + slightly smaller (overridden by states below) */
+.rotator-card{
+  opacity:.6;
+  filter: blur(1.2px);
+  transform: translate(-50%, -50%) scale(.92);
+}
+
+.rotator-card__text{
+  font-size:2rem;
+  font-weight:var(--fw-semibold);
+  line-height:1.15;
+}
+
+/* ---------- STATE: Full-time selected (middle) ---------- */
+#r-full:checked ~ .rotator-track label[for="r-full"]{
+  opacity:1;
+  filter:none;
+  transform: translate(-50%, -50%) translateX(0) scale(1.06);
+}
+#r-full:checked ~ .rotator-track label[for="r-part"]{
+  transform: translate(-50%, -50%) translateX(calc(var(--shift) * -1)) scale(.92);
+}
+#r-full:checked ~ .rotator-track label[for="r-apply"]{
+  transform: translate(-50%, -50%) translateX(var(--shift)) scale(.92);
+}
+
+/* ---------- STATE: Part-time selected (middle) ---------- */
+#r-part:checked ~ .rotator-track label[for="r-part"]{
+  opacity:1;
+  filter:none;
+  transform: translate(-50%, -50%) translateX(0) scale(1.06);
+}
+/* rotate the other two around (Apply goes left, Full goes right) */
+#r-part:checked ~ .rotator-track label[for="r-apply"]{
+  transform: translate(-50%, -50%) translateX(calc(var(--shift) * -1)) scale(.92);
+}
+#r-part:checked ~ .rotator-track label[for="r-full"]{
+  transform: translate(-50%, -50%) translateX(var(--shift)) scale(.92);
+}
+
+/* ---------- STATE: Apply selected (middle) ---------- */
+#r-apply:checked ~ .rotator-track label[for="r-apply"]{
+  opacity:1;
+  filter:none;
+  transform: translate(-50%, -50%) translateX(0) scale(1.06);
+}
+/* rotate the other two around (Full goes left, Part goes right) */
+#r-apply:checked ~ .rotator-track label[for="r-full"]{
+  transform: translate(-50%, -50%) translateX(calc(var(--shift) * -1)) scale(.92);
+}
+#r-apply:checked ~ .rotator-track label[for="r-part"]{
+  transform: translate(-50%, -50%) translateX(var(--shift)) scale(.92);
+}
+
+.rotator-hint{
+  opacity:.6;
+  margin-top:1rem;
+}
+
+/* tighter sizes on small screens */
+@media (max-width: 700px){
+  .rotator-track{ height: 300px; }
+  .rotator-card{ width: 240px; height: 240px; }
+  .rotator-card__text{ font-size: 1.6rem; }
+}
+
+
+/* Mobile behaviour */
 @media (max-width: 860px){
   .nav__links{ display:none; }
   .burger{ display:inline-grid; }
 
-  /* Only show panel when checkbox is checked */
+  /* Show panel only when toggled */
   .nav-toggle:checked ~ .mobile-panel{
     display:block;
-    padding-bottom:var(--space-2);
   }
 
   .mobile-panel__links{
     display:grid;
     gap:.5rem;
+    padding:.75rem;
+    border-radius:14px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
   }
 
   .mobile-panel__links a{
@@ -219,156 +321,4 @@ a{ color:inherit; text-decoration:none; }
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.14);
   }
-}
-
-/* =========================================================
-   Home hero – base layout only
-   NOTE: visual effects + background added later
-========================================================= */
-
-.page{
-  padding: var(--space-3) 0;
-}
-
-.hero{
-  display: grid;
-  gap: var(--space-3);
-  margin-top: var(--space-3);
-}
-
-.hero__glass{
-  max-width: 520px;
-}
-
-.hero__kicker{
-  margin: 0;
-  font-weight: var(--fw-semibold);
-  opacity: 0.85;
-}
-
-.hero__title{
-  margin: .25rem 0;
-  font-size: 3rem;
-  font-weight: var(--fw-bold);
-  line-height: 1.1;
-}
-
-.hero__subtitle{
-  margin: .75rem 0 0;
-  max-width: 40ch;
-  opacity: 0.85;
-}
-
-/* =========================================================
-   Button styles (base only)
-   NOTE: hover polish added later
-========================================================= */
-
-.btn{
-  display: inline-block;
-  padding: .75rem 1.25rem;
-  border-radius: 999px;
-  font-weight: var(--fw-semibold);
-  font-size: .95rem;
-  line-height: 1;
-  transition: background var(--t-med) var(--ease),
-              color var(--t-med) var(--ease),
-              transform var(--t-fast) var(--ease);
-}
-
-.hero__actions{
-  display: flex;
-  gap: .75rem;
-  margin-top: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.btn--primary{
-  background: var(--c-navy);
-  color: var(--c-white);
-}
-
-.btn--ghost{
-  background: transparent;
-  color: var(--c-navy);
-  border: 1px solid rgba(0,0,0,.15);
-}
-
-/* Home quick tiles
-   Layout only – visuals refined later */
-
-.tiles{
-  display: grid;
-  gap: var(--space-2);
-  margin-top: var(--space-4);
-}
-
-.tile{
-  display: block;
-  padding: var(--space-3);
-  border-radius: 18px;
-  border: 1px solid var(--c-line);
-  background: var(--c-white);
-}
-
-.tile__title{
-  margin: 0 0 .25rem 0;
-  font-weight: var(--fw-bold);
-}
-
-.tile__text{
-  margin: 0;
-  opacity: .75;
-}
-
-/* Responsive adjustment */
-@media (min-width: 768px){
-  .tiles{
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Home hero visuals
-   Adds background and glass effect */
-
-.hero{
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  padding: var(--space-4);
-  background:
-    linear-gradient(
-      135deg,
-      rgba(0,0,67,.85),
-      rgba(0,0,67,.65)
-    );
-  color: var(--c-white);
-}
-
-.hero__glass{
-  position: relative;
-  padding: var(--space-3);
-  border-radius: 18px;
-  background: rgba(255,255,255,.12);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.25);
-}
-
-.hero__kicker,
-.hero__subtitle{
-  opacity: .9;
-}
-
-/* Background image placeholder */
-.hero__media{
-  position: absolute;
-  inset: 0;
-  background: url("images/hero.jpg") center / cover no-repeat;
-  opacity: .25;
-  z-index: 0;
-}
-
-.hero__glass{
-  z-index: 1;
 }
