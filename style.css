@@ -327,3 +327,48 @@ a{ color:inherit; text-decoration:none; }
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Home hero visuals
+   Adds background and glass effect */
+
+.hero{
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: var(--space-4);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,67,.85),
+      rgba(0,0,67,.65)
+    );
+  color: var(--c-white);
+}
+
+.hero__glass{
+  position: relative;
+  padding: var(--space-3);
+  border-radius: 18px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+.hero__kicker,
+.hero__subtitle{
+  opacity: .9;
+}
+
+/* Background image placeholder */
+.hero__media{
+  position: absolute;
+  inset: 0;
+  background: url("images/hero.jpg") center / cover no-repeat;
+  opacity: .25;
+  z-index: 0;
+}
+
+.hero__glass{
+  z-index: 1;
+}
