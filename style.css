@@ -670,3 +670,48 @@ a{ text-decoration:none; color:inherit; }
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* =========================
+   Student info – support section
+   ========================= */
+
+.info-support{
+  margin-top: var(--space-4);
+}
+
+.info-support__title{
+  margin: 0 0 var(--space-3) 0;
+  font-size: 1.6rem;
+  font-weight: var(--fw-bold);
+}
+
+.info-support__grid{
+  display: grid;
+  gap: var(--space-3);
+}
+
+.support-item{
+  padding: var(--space-3);
+  border-radius: 18px;
+  background: rgba(0,0,67,.04);
+  border: 1px solid rgba(0,0,67,.12);
+}
+
+.support-item__title{
+  margin: 0 0 .4rem 0;
+  font-size: 1.1rem;
+  font-weight: var(--fw-semibold);
+}
+
+.support-item__text{
+  margin: 0;
+  opacity: .8;
+  max-width: 60ch;
+}
+
+/* Desktop layout */
+@media (min-width: 900px){
+  .info-support__grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
