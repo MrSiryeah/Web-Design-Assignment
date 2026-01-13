@@ -836,3 +836,30 @@ a{ text-decoration:none; color:inherit; }
   display: grid;
   gap: var(--space-3);
 }
+
+/* =========================
+   Accessibility + UX polish
+   ========================= */
+
+/* Clear keyboard focus */
+:focus-visible{
+  outline: 3px solid rgba(0,0,67,.35);
+  outline-offset: 3px;
+}
+
+/* Make buttons feel clickable */
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+.btn:active{
+  transform: translateY(0);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce){
+  *{
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
