@@ -620,3 +620,53 @@ a{ text-decoration:none; color:inherit; }
   font-weight: var(--fw-semibold);
   color: var(--c-navy);
 }
+
+/* =========================
+   Student info – quick cards
+   ========================= */
+
+.info-quick{
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.info-card{
+  padding: var(--space-3);
+  border-radius: 18px;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  transition:
+    transform var(--t-med) var(--ease),
+    box-shadow var(--t-med) var(--ease);
+}
+
+.info-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.12);
+}
+
+.info-card__title{
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: var(--fw-semibold);
+}
+
+.info-card__text{
+  margin: .5rem 0 1rem 0;
+  opacity: .75;
+  max-width: 50ch;
+}
+
+.info-card__link{
+  display: inline-block;
+  font-weight: var(--fw-semibold);
+  color: var(--c-navy);
+}
+
+/* Desktop layout */
+@media (min-width: 900px){
+  .info-quick{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
