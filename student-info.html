@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCAST Refresh | Student’s Info</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Go to Home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span class="brand__text">MCAST REFRESH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <div class="nav__links">
+            <a class="nav__link" href="index.html">Home</a>
+            <a class="nav__link" href="contact.html">Contact us</a>
+            <a class="nav__link" href="apply.html">Apply</a>
+            <a class="nav__link" href="student-info.html" aria-current="page">Student’s Info</a>
+            <a class="nav__link" href="explore.html">Explore</a>
+          </div>
+
+          <input class="nav-toggle" type="checkbox" id="navToggle" />
+          <label class="icon-btn burger" for="navToggle" aria-label="Open menu">☰</label>
+
+          <div class="mobile-panel">
+            <div class="mobile-panel__links" aria-label="Mobile navigation">
+              <a href="index.html">Home</a>
+              <a href="contact.html">Contact us</a>
+              <a href="apply.html">Apply</a>
+              <a href="student-info.html">Student’s Info</a>
+              <a href="explore.html">Explore</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+
+      <!-- Student info hero -->
+      <section class="hero" aria-labelledby="info-title">
+        <div class="hero__glass">
+          <h1 id="info-title" class="hero__title">STUDENT INFO</h1>
+          <p class="hero__subtitle">
+            Everything you need in one place — support, services, and key resources.
+          </p>
+        </div>
+        <div class="hero__media" aria-hidden="true"></div>
+      </section>
+
+      <!-- Quick access (first pass) -->
+      <section class="info-quick" aria-label="Quick access">
+        <article class="info-card">
+          <h2 class="info-card__title">Student Support</h2>
+          <p class="info-card__text">Guidance, wellbeing and learning support services.</p>
+          <a class="info-card__link" href="#">View support</a>
+        </article>
+
+        <article class="info-card">
+          <h2 class="info-card__title">Campus Services</h2>
+          <p class="info-card__text">Library, canteen, transport and facilities.</p>
+          <a class="info-card__link" href="#">View services</a>
+        </article>
+
+        <article class="info-card">
+          <h2 class="info-card__title">Important Links</h2>
+          <p class="info-card__text">Key portals and resources for students.</p>
+          <a class="info-card__link" href="#">Open links</a>
+        </article>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
