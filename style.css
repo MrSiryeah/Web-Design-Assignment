@@ -799,3 +799,40 @@ a{ text-decoration:none; color:inherit; }
     align-items: start;
   }
 }
+
+/* =========================
+   Contact page layout
+   ========================= */
+
+.contact{
+  margin-top: var(--space-4);
+}
+
+.contact__grid{
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Desktop split */
+@media (min-width: 900px){
+  .contact__grid{
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+.contact__heading{
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: var(--fw-bold);
+}
+
+.contact__lead{
+  margin: .5rem 0 var(--space-3);
+  opacity: .75;
+}
+
+.contact__details{
+  display: grid;
+  gap: var(--space-3);
+}
