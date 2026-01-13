@@ -171,8 +171,14 @@ a{ text-decoration:none; color:inherit; }
 .hero__media{
   position:absolute;
   inset:0;
-  background:url("images/hero.jpg") center/cover no-repeat;
-  opacity:.25;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,67,.85),
+      rgba(0,0,67,.55)
+    ),
+    url("images/Mcast_School_Background.webp") center / cover no-repeat;
+  opacity: .9;
   z-index:-1;
 }
 
@@ -343,10 +349,10 @@ a{ text-decoration:none; color:inherit; }
   background:
     linear-gradient(
       135deg,
-      rgba(0,0,67,.85),
-      rgba(0,0,67,.55)
+      rgba(0, 0, 67, 0.415),
+      rgba(0, 0, 67, 0.345)
     ),
-    url("images/home-hero.jpg") center / cover no-repeat;
+    url("images/Mcast_School_Background.webp") center / cover no-repeat;
   z-index: -1;
 }
 
