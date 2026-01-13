@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCAST Refresh | Contact</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Go to Home">
+          <img
+            src="images/Mcast_Logo_Light.png"
+            alt="MCAST"
+            class="brand__logo"
+          />
+          <span class="brand__text">MCAST</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <div class="nav__links">
+            <a class="nav__link" href="index.html">Home</a>
+            <a class="nav__link" href="contact.html" aria-current="page">Contact us</a>
+            <a class="nav__link" href="apply.html">Apply</a>
+            <a class="nav__link" href="student-info.html">Student’s Info</a>
+            <a class="nav__link" href="explore.html">Explore</a>
+          </div>
+
+          <input class="nav-toggle" type="checkbox" id="navToggle" />
+          <label class="icon-btn burger" for="navToggle" aria-label="Open menu">☰</label>
+
+          <div class="mobile-panel">
+            <div class="mobile-panel__links" aria-label="Mobile navigation">
+              <a href="index.html">Home</a>
+              <a href="contact.html">Contact us</a>
+              <a href="apply.html">Apply</a>
+              <a href="student-info.html">Student’s Info</a>
+              <a href="explore.html">Explore</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+
+      <!-- Contact hero -->
+      <section class="hero" aria-labelledby="contact-title">
+        <div class="hero__glass">
+          <h1 id="contact-title" class="hero__title">CONTACT US</h1>
+          <p class="hero__subtitle">
+            Get in touch with us — we’re here to help you take the next step.
+          </p>
+        </div>
+        <div class="hero__media" aria-hidden="true"></div>
+      </section>
+
+      <!-- Contact layout -->
+      <section class="contact" aria-label="Contact information">
+        <div class="contact__grid">
+
+          <!-- Contact form -->
+          <div class="contact__form">
+            <h2 class="contact__heading">Send us a message</h2>
+            <p class="contact__lead">
+              If you have any questions about courses, applications, or student life,
+              fill in the form below and we’ll get back to you.
+            </p>
+
+            <form class="form" action="#" method="post">
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="contactName">Full name</label>
+                  <input class="field__input" type="text" id="contactName" required />
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="contactEmail">Email</label>
+                  <input class="field__input" type="email" id="contactEmail" required />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="contactMessage">Message</label>
+                <textarea
+                  class="field__input field__textarea"
+                  id="contactMessage"
+                  rows="6"
+                  placeholder="How can we help you?"
+                ></textarea>
+              </div>
+
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">Send message</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact details -->
+          <aside class="contact__details" aria-label="Contact details">
+            <div class="side-card">
+              <h2 class="side-card__title">Main campus</h2>
+              <p class="side-card__text">
+                Malta College of Arts, Science & Technology<br />
+                Triq Kordin, Paola, Malta
+              </p>
+            </div>
+
+            <div class="side-card">
+              <h2 class="side-card__title">Contact details</h2>
+              <p class="side-card__text">
+                Phone: +356 2398 7100<br />
+                Email: information@mcast.edu.mt
+              </p>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img
+            src="images/Mcast_Logo_Dark.png"
+            alt="MCAST"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">
+            Malta College of Arts, Science & Technology
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul class="footer-links">
+            <li><a href="explore.html">Explore courses</a></li>
+            <li><a href="apply.html">Apply</a></li>
+            <li><a href="student-info.html">Student information</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MCAST. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
