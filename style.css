@@ -715,3 +715,21 @@ a{ text-decoration:none; color:inherit; }
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Header logo */
+.brand__logo{
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.brand{
+  gap: .9rem;
+}
+
+/* Keep text for accessibility, but don’t visually dominate */
+.brand__text{
+  font-weight: var(--fw-bold);
+  letter-spacing: .4px;
+  opacity: .95;
+}
