@@ -24,8 +24,15 @@
 *::before,
 *::after{ box-sizing:border-box; }
 
+/* Prevent horizontal scrolling issues site-wide */
+html, body{
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body{
   margin:0;
+  min-height: 100vh;
   font-family:system-ui, sans-serif;
   background:var(--c-white);
   color:var(--c-ink);
@@ -169,7 +176,7 @@ a{ text-decoration:none; color:inherit; }
   .site-header .container{ position: relative; }
 
   .mobile-panel{
-    display: block; /* exists on mobile only */
+    display: block;
     position: absolute;
     top: calc(100%);
     left: 50%;
@@ -213,8 +220,18 @@ a{ text-decoration:none; color:inherit; }
   .burger{ display: none !important; }
 }
 
-/* Hero */
-.page{ padding:3rem 0; }
+/* =========================
+   Page base
+   ========================= */
+
+.page{
+  padding:3rem 0;
+  min-height: calc(100vh - 64px);
+}
+
+/* =========================
+   Hero (shared)
+   ========================= */
 
 .hero{
   position:relative;
@@ -224,7 +241,7 @@ a{ text-decoration:none; color:inherit; }
   justify-content:center;
   padding:3rem 2rem;
   border-radius:24px;
-  background: transparent; /* background handled by .hero__media */
+  background: transparent;
   color:#fff;
   overflow:hidden;
 }
@@ -266,6 +283,38 @@ a{ text-decoration:none; color:inherit; }
     url("images/Mcast_School_Background.webp") center / cover no-repeat;
   z-index: -1;
 }
+
+/* =========================
+   Buttons
+   ========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.8rem 1.05rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:var(--fw-semibold);
+  transition: transform var(--t-fast) var(--ease),
+              background var(--t-med) var(--ease),
+              box-shadow var(--t-med) var(--ease);
+}
+
+.btn--primary{
+  background:#fff;
+  color: var(--c-navy);
+}
+
+.btn--ghost{
+  background: transparent;
+  border-color: rgba(255,255,255,.55);
+  color:#fff;
+}
+
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
 
 /* =========================
    Home quick tiles
@@ -311,113 +360,6 @@ a{ text-decoration:none; color:inherit; }
 }
 
 /* =========================
-   Buttons
-   ========================= */
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.5rem;
-  padding:.8rem 1.05rem;
-  border-radius:999px;
-  border:1px solid transparent;
-  font-weight:var(--fw-semibold);
-  transition: transform var(--t-fast) var(--ease),
-              background var(--t-med) var(--ease),
-              box-shadow var(--t-med) var(--ease);
-}
-
-.btn--primary{
-  background:#fff;
-  color: var(--c-navy);
-}
-
-.btn--ghost{
-  background: transparent;
-  border-color: rgba(255,255,255,.55);
-  color:#fff;
-}
-
-.btn:hover{ transform: translateY(-1px); }
-.btn:active{ transform: translateY(0); }
-
-/* =========================
-   Explore rotator (no JS)
-   ========================= */
-
-.course-rotator{
-  margin-top:4rem;
-  text-align:center;
-}
-
-.rotator-ui{
-  margin-bottom: var(--space-2);
-  opacity: .7;
-  font-weight: var(--fw-semibold);
-}
-
-.rotator-radio{
-  position:absolute;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-  clip: rect(0,0,0,0);
-}
-
-.rotator-track{
-  display:grid;
-  gap:2rem;
-  justify-content:center;
-}
-
-.rotator-card{
-  width:300px;
-  aspect-ratio:1/1;
-  display:grid;
-  place-items:center;
-  background:var(--c-navy);
-  color:white;
-  border-radius:10px;
-  cursor:pointer;
-  transition:transform .3s, filter .3s, opacity .3s;
-  filter:blur(1.2px);
-  opacity:.6;
-  transform:scale(.92);
-}
-
-.rotator-card__text{
-  font-size:2rem;
-  font-weight:var(--fw-semibold);
-}
-
-#r-part:checked ~ .rotator-track label[for="r-part"],
-#r-full:checked ~ .rotator-track label[for="r-full"],
-#r-apply:checked ~ .rotator-track label[for="r-apply"]{
-  filter:none;
-  opacity:1;
-  transform:scale(1);
-}
-
-@media(min-width:900px){
-  .rotator-track{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-.rotator-hint{
-  opacity:.6;
-  margin-top:1rem;
-}
-
-/* tighter sizes on small screens */
-@media (max-width: 700px){
-  .rotator-track{ height: 300px; }
-  .rotator-card{ width: 240px; height: 240px; }
-  .rotator-card__text{ font-size: 1.6rem; }
-}
-
-/* =========================
    Home hero
    ========================= */
 
@@ -454,6 +396,179 @@ a{ text-decoration:none; color:inherit; }
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+}
+
+/* =========================
+   Explore rotator (no JS)
+   Always carousel: selected stays centered
+   ========================= */
+
+.course-rotator{
+  margin-top: var(--space-4);
+  text-align: center;
+  overflow: hidden; /* no horizontal scroll */
+}
+
+.rotator-ui{
+  margin-bottom: var(--space-2);
+  opacity: .7;
+  font-weight: var(--fw-semibold);
+}
+
+.rotator-radio{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* Base sizes */
+.rotator-track{
+  --rot-size: 240px;
+  --rot-gap: 28px;
+
+  position: relative;
+  width: min(100%, calc((var(--rot-size) * 3) + (var(--rot-gap) * 2)));
+  height: var(--rot-size);
+  margin: 0 auto;
+}
+
+/* Cards */
+.rotator-card{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--rot-size);
+  height: var(--rot-size);
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+  background: var(--c-navy);
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.12);
+
+  transition:
+    transform var(--t-med) var(--ease),
+    filter var(--t-med) var(--ease),
+    opacity var(--t-med) var(--ease),
+    box-shadow var(--t-med) var(--ease);
+
+  filter: blur(1.2px);
+  opacity: .6;
+  transform: translateX(-50%) scale(.92);
+  z-index: 1; /* base */
+}
+
+.rotator-card__text{
+  font-size: 1.6rem;
+  font-weight: var(--fw-semibold);
+  line-height: 1.15;
+}
+
+/* Selected: ALWAYS on top */
+#r-full:checked ~ .rotator-track label[for="r-full"],
+#r-part:checked ~ .rotator-track label[for="r-part"],
+#r-apply:checked ~ .rotator-track label[for="r-apply"]{
+  filter: none;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+  z-index: 10;
+}
+
+/* Side cards behind the selected */
+#r-full:checked ~ .rotator-track label[for="r-part"],
+#r-full:checked ~ .rotator-track label[for="r-apply"],
+#r-part:checked ~ .rotator-track label[for="r-full"],
+#r-part:checked ~ .rotator-track label[for="r-apply"],
+#r-apply:checked ~ .rotator-track label[for="r-full"],
+#r-apply:checked ~ .rotator-track label[for="r-part"]{
+  z-index: 2;
+}
+
+/* Default positions */
+#r-full:checked ~ .rotator-track label[for="r-part"]{
+  transform: translateX(calc(-50% - var(--rot-size) - var(--rot-gap))) scale(.92);
+}
+#r-full:checked ~ .rotator-track label[for="r-apply"]{
+  transform: translateX(calc(-50% + var(--rot-size) + var(--rot-gap))) scale(.92);
+}
+
+#r-part:checked ~ .rotator-track label[for="r-full"]{
+  transform: translateX(calc(-50% + var(--rot-size) + var(--rot-gap))) scale(.92);
+}
+#r-part:checked ~ .rotator-track label[for="r-apply"]{
+  transform: translateX(calc(-50% - var(--rot-size) - var(--rot-gap))) scale(.92);
+}
+
+#r-apply:checked ~ .rotator-track label[for="r-full"]{
+  transform: translateX(calc(-50% - var(--rot-size) - var(--rot-gap))) scale(.92);
+}
+#r-apply:checked ~ .rotator-track label[for="r-part"]{
+  transform: translateX(calc(-50% + var(--rot-size) + var(--rot-gap))) scale(.92);
+}
+
+.rotator-hint{
+  margin-top: var(--space-2);
+  opacity: .6;
+  font-size: .95rem;
+}
+
+/* Smaller phones */
+@media (max-width: 520px){
+  .rotator-track{ --rot-size: 210px; --rot-gap: 18px; }
+  .rotator-card__text{ font-size: 1.45rem; }
+}
+
+/* =========================
+   TRUE edge-to-edge mobile override
+   Cards can go beyond edges WITHOUT scrolling
+   ========================= */
+@media (max-width: 700px){
+
+  /* Break out of container padding */
+  .course-rotator{
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+  }
+
+  .rotator-track{
+    width: 100vw;
+    margin: 0;
+    height: var(--rot-size);
+
+    /* distance from center so sides hit the edges */
+    --edge: calc(50vw - (var(--rot-size) / 2));
+  }
+
+  /* Full selected */
+  #r-full:checked ~ .rotator-track label[for="r-part"]{
+    transform: translateX(calc(-50% - var(--edge))) scale(.92);
+  }
+  #r-full:checked ~ .rotator-track label[for="r-apply"]{
+    transform: translateX(calc(-50% + var(--edge))) scale(.92);
+  }
+
+  /* Part selected */
+  #r-part:checked ~ .rotator-track label[for="r-full"]{
+    transform: translateX(calc(-50% + var(--edge))) scale(.92);
+  }
+  #r-part:checked ~ .rotator-track label[for="r-apply"]{
+    transform: translateX(calc(-50% - var(--edge))) scale(.92);
+  }
+
+  /* Apply selected */
+  #r-apply:checked ~ .rotator-track label[for="r-full"]{
+    transform: translateX(calc(-50% - var(--edge))) scale(.92);
+  }
+  #r-apply:checked ~ .rotator-track label[for="r-part"]{
+    transform: translateX(calc(-50% + var(--edge))) scale(.92);
+  }
 }
 
 /* =========================
@@ -744,7 +859,6 @@ a{ text-decoration:none; color:inherit; }
   max-width: 420px;
 }
 
-/* IMPORTANT: stop the logo from becoming massive */
 .footer-logo{
   width: 140px;
   height: auto;
@@ -777,7 +891,8 @@ a{ text-decoration:none; color:inherit; }
   opacity: .85;
 }
 
-/* Desktop: brand left, links right */
+.site-footer p{ margin: 0; }
+
 @media (min-width: 900px){
   .footer-top{
     grid-template-columns: 1fr auto;
@@ -789,7 +904,6 @@ a{ text-decoration:none; color:inherit; }
   }
 }
 
-/* Mobile: keep things tidy */
 @media (max-width: 600px){
   .site-footer{
     padding: var(--space-3) 0 var(--space-3);
@@ -814,22 +928,4 @@ a{ text-decoration:none; color:inherit; }
     scroll-behavior: auto !important;
     transition: none !important;
   }
-}
-
-/* Fix white gap below footer */
-.site-footer p{
-  margin: 0;
-}
-
-html, body{
-  height: 100%;
-}
-
-body{
-  min-height: 100vh;
-}
-
-/* If page is short, keep footer stuck to bottom */
-.page{
-  min-height: calc(100vh - 64px); /* 64px = header height */
 }

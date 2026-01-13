@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCAST Refresh | Explore</title>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,14 +11,10 @@
   <header class="site-header">
     <div class="container">
       <div class="topbar">
-      <a class="brand" href="index.html" aria-label="Go to Home">
-        <img
-          src="images/Mcast_Logo_Light.png"
-          alt="MCAST"
-          class="brand__logo"
-        />
-        <span class="brand__text">MCAST</span>
-      </a>
+        <a class="brand" href="index.html" aria-label="Go to Home">
+          <img src="images/Mcast_Logo_Light.png" alt="MCAST" class="brand__logo" />
+          <span class="brand__text">MCAST</span>
+        </a>
 
         <nav class="nav" aria-label="Primary navigation">
           <div class="nav__links">
@@ -41,7 +36,7 @@
               <a href="contact.html">Contact us</a>
               <a href="apply.html">Apply</a>
               <a href="student-info.html">Student’s Info</a>
-              <a href="explore.html">Explore</a>
+              <a href="explore.html" aria-current="page">Explore</a>
             </div>
           </div>
         </nav>
@@ -51,8 +46,6 @@
 
   <main class="page">
     <div class="container">
-
-      <!-- Explore hero (prospective students) -->
       <section class="hero" aria-labelledby="explore-title">
         <div class="hero__glass">
           <h1 id="explore-title" class="hero__title">EXPLORE</h1>
@@ -61,7 +54,6 @@
         <div class="hero__media" aria-hidden="true"></div>
       </section>
 
-      <!-- Rotating course options (no JS) -->
       <section class="course-rotator" aria-label="Quick course choices">
         <span class="rotator-ui" aria-hidden="true">↔</span>
 
@@ -86,7 +78,6 @@
         <p class="rotator-hint">Select a card to focus it.</p>
       </section>
 
-      <!-- Next section will be the Explore content grid (we’ll style later) -->
       <section class="explore-grid" aria-label="Browse course categories">
         <article class="explore-card">
           <h2 class="explore-card__title">Find a course</h2>
@@ -112,37 +103,31 @@
           <a class="explore-card__link" href="#">Download</a>
         </article>
       </section>
-
     </div>
   </main>
 
   <footer class="site-footer" aria-label="Footer">
-  <div class="container">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/Mcast_Logo_Light.png" alt="MCAST" class="footer-logo" />
+          <p class="footer-tagline">Malta College of Arts, Science &amp; Technology</p>
+        </div>
 
-    <div class="footer-top">
-      <div class="footer-brand">
-      <img src="images/Mcast_Logo_Light.png" alt="MCAST" class="footer-logo" />
-        <p class="footer-tagline">
-          Malta College of Arts, Science & Technology
-        </p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul class="footer-links">
+            <li><a href="explore.html">Explore courses</a></li>
+            <li><a href="apply.html">Apply</a></li>
+            <li><a href="student-info.html">Student information</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </nav>
       </div>
 
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <ul class="footer-links">
-          <li><a href="explore.html">Explore courses</a></li>
-          <li><a href="apply.html">Apply</a></li>
-          <li><a href="student-info.html">Student information</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-        </ul>
-      </nav>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MCAST. All rights reserved.</p>
+      </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 MCAST. All rights reserved.</p>
-    </div>
-
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
