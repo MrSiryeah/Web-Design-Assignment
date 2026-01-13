@@ -932,7 +932,7 @@ a{ text-decoration:none; color:inherit; }
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100% - .25rem);
+  top: calc(100%);
   padding: 0;
   margin: 0;
   opacity: 0;
@@ -944,13 +944,13 @@ a{ text-decoration:none; color:inherit; }
 
 /* The dropdown “sheet” */
 .mobile-panel__links{
-  display: grid;
-  gap: .55rem;
   padding: 1rem;
   border-radius: 0 0 18px 18px;
-  background: rgba(215,215,215,.92); /* light grey like your figma */
+  background: rgba(215,215,215,.92);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(0,0,0,.08);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
 .mobile-panel__links a{
@@ -958,6 +958,15 @@ a{ text-decoration:none; color:inherit; }
   border-radius: 10px;
   font-weight: var(--fw-semibold);
   color: #0b1020;
+}
+
+.mobile-panel{
+  left: 0;
+  right: 0;
+}
+
+.mobile-panel__links a{
+  padding: .9rem .4rem;
 }
 
 /* Open state */
