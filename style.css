@@ -720,67 +720,83 @@ a{ text-decoration:none; color:inherit; }
 }
 
 /* =========================
-   Footer
+   Footer (dark, fixed sizing)
    ========================= */
 
 .site-footer{
   margin-top: var(--space-4);
   padding: var(--space-4) 0 var(--space-3);
   background: var(--c-navy);
-  border-top: 1px solid var(--c-line);
+  color: #fff;
+  border-top: none;
+  overflow: hidden;
 }
 
 .footer-top{
   display: grid;
   gap: var(--space-3);
+  align-items: start;
 }
 
 .footer-brand{
   display: grid;
-  gap: .5rem;
-  max-width: 320px;
+  gap: .75rem;
+  max-width: 420px;
 }
 
+/* IMPORTANT: stop the logo from becoming massive */
 .footer-logo{
   width: 140px;
   height: auto;
+  max-width: 100%;
+  display: block;
 }
 
 .footer-tagline{
   margin: 0;
   font-size: .9rem;
-  opacity: .75;
-}
-
-.footer-nav{
-  display: grid;
-}
-
-.footer-links{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: .5rem;
+  opacity: .85;
 }
 
 .footer-links a{
+  color: #fff;
+  opacity: .9;
   font-weight: var(--fw-semibold);
-  color: var(--c-white);
+}
+
+.footer-links a:hover{
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .footer-bottom{
   margin-top: var(--space-3);
   padding-top: var(--space-2);
-  border-top: 1px solid var(--c-line);
+  border-top: 1px solid rgba(255,255,255,.18);
   font-size: .85rem;
-  opacity: .7;
+  opacity: .85;
 }
 
+/* Desktop: brand left, links right */
 @media (min-width: 900px){
   .footer-top{
     grid-template-columns: 1fr auto;
-    align-items: start;
+    column-gap: var(--space-4);
+  }
+
+  .footer-nav{
+    justify-self: end;
+  }
+}
+
+/* Mobile: keep things tidy */
+@media (max-width: 600px){
+  .site-footer{
+    padding: var(--space-3) 0 var(--space-3);
+  }
+
+  .footer-logo{
+    width: 120px;
   }
 }
 
@@ -798,4 +814,22 @@ a{ text-decoration:none; color:inherit; }
     scroll-behavior: auto !important;
     transition: none !important;
   }
+}
+
+/* Fix white gap below footer */
+.site-footer p{
+  margin: 0;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  min-height: 100vh;
+}
+
+/* If page is short, keep footer stuck to bottom */
+.page{
+  min-height: calc(100vh - 64px); /* 64px = header height */
 }
