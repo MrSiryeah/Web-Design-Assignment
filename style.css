@@ -161,7 +161,7 @@ a{ text-decoration:none; color:inherit; }
 }
 .burger__icon::after{ bottom: 2px; }
 
-/* Mobile panel — hidden by default everywhere */
+/* Mobile panel hidden by default everywhere */
 .mobile-panel{ display: none; }
 
 /* =========================
