@@ -236,6 +236,27 @@ a{ text-decoration:none; color:inherit; }
 /* =========================
    Hero (shared)
    ========================= */
+/* Home hero content polish */
+.hero__content{
+  max-width: 58ch;
+}
+
+.hero__subtitle{
+  line-height: 1.6;
+}
+
+.hero__actions{
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 700px){
+  .hero__actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
 
 .hero{
   position:relative;
