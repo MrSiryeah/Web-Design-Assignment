@@ -404,6 +404,7 @@ a{ text-decoration:none; color:inherit; }
    ========================= */
 
 .course-rotator{
+  position: relative;
   margin-top: var(--space-4);
   text-align: center;
   overflow: hidden; /* no horizontal scroll */
@@ -417,6 +418,8 @@ a{ text-decoration:none; color:inherit; }
 
 .rotator-radio{
   position: absolute;
+  top: 0;
+  left: 0;
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -962,6 +965,7 @@ a{ text-decoration:none; color:inherit; }
   display:grid;
   grid-template-columns: 1.2fr .8fr;
   gap: var(--space-3);
+  align-items: start;
 }
 
 @media (max-width: 900px){
