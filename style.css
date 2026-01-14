@@ -63,7 +63,7 @@ a{ text-decoration:none; color:inherit; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 64px;
+  min-height: 72px;
   padding: 1rem 0;
 }
 
@@ -75,7 +75,7 @@ a{ text-decoration:none; color:inherit; }
 }
 
 .brand__logo{
-  height: 34px;
+  height: 56px;
   width: auto;
   display: block;
 }
