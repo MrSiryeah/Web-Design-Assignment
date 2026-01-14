@@ -1061,3 +1061,67 @@ a{ text-decoration:none; color:inherit; }
   opacity: .85;
   line-height: 1.6;
 }
+
+/* Explore: search + filter pills */
+.field{
+  display:grid;
+  gap: .4rem;
+  margin-bottom: var(--space-2);
+}
+
+.field-label{
+  font-size: .9rem;
+  opacity: .8;
+}
+
+.input{
+  width: 100%;
+  padding: .9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--c-line);
+  outline: none;
+}
+
+.input:focus{
+  box-shadow: 0 0 0 3px rgba(0,0,67,.14);
+  border-color: rgba(0,0,67,.35);
+}
+
+.filters{
+  display:flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: var(--space-2);
+}
+
+.pill{
+  border: 1px solid var(--c-line);
+  background: #fff;
+  padding: .55rem .85rem;
+  border-radius: 999px;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.pill:hover{
+  transform: translateY(-1px);
+}
+
+.muted-note{
+  margin: var(--space-2) 0 0;
+  opacity: .75;
+  font-size: .95rem;
+}
+
+/* Spotlight small typography */
+.spotlight-title{
+  margin: 0 0 .35rem;
+  font-size: 1.1rem;
+}
+
+.spotlight-text{
+  margin: 0 0 var(--space-2);
+  opacity: .85;
+  line-height: 1.6;
+}
