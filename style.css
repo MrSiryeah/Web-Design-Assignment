@@ -1033,3 +1033,31 @@ a{ text-decoration:none; color:inherit; }
 .list .muted{
   opacity:.75;
 }
+
+.faq{
+  display: grid;
+  gap: .75rem;
+}
+
+.faq details{
+  border: 1px solid var(--c-line);
+  border-radius: 14px;
+  padding: .85rem 1rem;
+  background: #fff;
+}
+
+.faq summary{
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker{
+  display: none;
+}
+
+.faq details p{
+  margin: .65rem 0 0;
+  opacity: .85;
+  line-height: 1.6;
+}
