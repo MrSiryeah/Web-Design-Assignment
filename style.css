@@ -24,9 +24,7 @@
 *::before,
 *::after{ box-sizing:border-box; }
 
-html{
-  scroll-behavior: smooth;
-}
+html{ scroll-behavior: smooth; }
 
 /* Prevent horizontal scrolling issues site-wide */
 html, body{
@@ -182,7 +180,7 @@ a{ text-decoration:none; color:inherit; }
   .mobile-panel{
     display: block;
     position: absolute;
-    top: calc(100%);
+    top: 100%;
     left: 50%;
     width: 100vw;
     transform: translateX(-50%) translateY(-8px);
@@ -191,15 +189,6 @@ a{ text-decoration:none; color:inherit; }
     transition: opacity var(--t-med) var(--ease),
                 transform var(--t-med) var(--ease);
   }
-
-  .mobile-panel__links a{
-  padding: .9rem 1rem;
-  border-radius: 12px;
-}
-
-.mobile-panel__links a:hover{
-  background: rgba(255,255,255,.08);
-}
 
   .mobile-panel__links{
     display: grid;
@@ -213,10 +202,14 @@ a{ text-decoration:none; color:inherit; }
   }
 
   .mobile-panel__links a{
-    padding: .9rem .4rem;
-    border-radius: 10px;
+    padding: .9rem 1rem;
+    border-radius: 12px;
     font-weight: var(--fw-semibold);
     color: #0b1020;
+  }
+
+  .mobile-panel__links a:hover{
+    background: rgba(255,255,255,.08);
   }
 
   /* Open state */
@@ -238,14 +231,8 @@ a{ text-decoration:none; color:inherit; }
    ========================= */
 
 .page{
-  padding:3rem 0;
   min-height: calc(100vh - 64px);
 }
-
-/* =========================
-   Hero (shared)
-   ========================= */
-/* Home hero content polish */
 
 /* Consistent page spacing */
 .page .container{
@@ -253,7 +240,10 @@ a{ text-decoration:none; color:inherit; }
   padding-bottom: var(--space-4);
 }
 
-/* Consistent hero spacing across pages */
+/* =========================
+   Hero (shared)
+   ========================= */
+
 .hero,
 .home-hero{
   margin-bottom: var(--space-4);
@@ -450,18 +440,20 @@ a{ text-decoration:none; color:inherit; }
    Always carousel: selected stays centered
    ========================= */
 
-/* Disable navigation on rotator cards unless active */
+/* Rotator link should look like normal card text */
 .rotator-card__link{
-  pointer-events: none;
-}
-
-.rotator-card__link{
+  all: unset;           /* removes default <a> styling */
   display: grid;
   place-items: center;
   width: 100%;
   height: 100%;
-  text-decoration: none;
+  font: inherit;
   color: inherit;
+  text-align: center;
+  cursor: inherit;
+
+  /* Disable navigation unless active */
+  pointer-events: none;
 }
 
 .course-rotator{
@@ -543,11 +535,10 @@ a{ text-decoration:none; color:inherit; }
   z-index: 10;
   pointer-events: auto;
 }
+
 /* Enable the Apply link ONLY when its card is active (centered) */
 #r-apply:checked ~ .rotator-track label[for="r-apply"] .rotator-card__link{
   pointer-events: auto;
-}
-#r-apply:checked ~ .rotator-track label[for="r-apply"] .rotator-card__link{
   cursor: pointer;
 }
 
@@ -1021,10 +1012,6 @@ a{ text-decoration:none; color:inherit; }
   margin-top: var(--space-4);
 }
 
-.section-head p{
-  line-height: 1.6;
-}
-
 .section-head{
   display:flex;
   align-items:flex-end;
@@ -1043,6 +1030,7 @@ a{ text-decoration:none; color:inherit; }
   margin:0;
   opacity:.85;
   max-width: 60ch;
+  line-height: 1.6;
 }
 
 .two-col{
@@ -1212,11 +1200,6 @@ a{ text-decoration:none; color:inherit; }
   margin: 0 0 var(--space-2);
   opacity: .85;
   line-height: 1.6;
-}
-
-:focus-visible{
-  outline: 3px solid rgba(0,0,67,.25);
-  outline-offset: 3px;
 }
 
 .nav__link:focus-visible,
