@@ -566,6 +566,25 @@ a{ text-decoration:none; color:inherit; }
   line-height: 1.15;
 }
 
+#r-full:checked ~ .rotator-track label[for="r-full"] .rotator-card__link,
+#r-part:checked ~ .rotator-track label[for="r-part"] .rotator-card__link,
+#r-apply:checked ~ .rotator-track label[for="r-apply"] .rotator-card__link{
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Enable the Full-time link ONLY when its card is active (centered) */
+#r-full:checked ~ .rotator-track label[for="r-full"] .rotator-card__link{
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Enable the Part-time link ONLY when its card is active (centered) */
+#r-part:checked ~ .rotator-track label[for="r-part"] .rotator-card__link{
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 /* Selected: ALWAYS on top */
 #r-full:checked ~ .rotator-track label[for="r-full"],
 #r-part:checked ~ .rotator-track label[for="r-part"],
@@ -1206,6 +1225,13 @@ a{ text-decoration:none; color:inherit; }
 
 .list .muted{
   opacity:.75;
+}
+
+.course-faq details{
+  margin-bottom: .75rem;
+}
+.course-faq details:last-child{
+  margin-bottom: 0;
 }
 
 .faq{
