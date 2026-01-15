@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCAST Refresh | Student Life</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html" aria-label="Go to Home">
+        <img src="images/Mcast_Logo_Light_Full.png" alt="MCAST" class="brand__logo" />
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <div class="nav__links">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="contact.html">Contact us</a>
+          <a class="nav__link" href="apply.html">Apply</a>
+          <a class="nav__link" href="student-info.html">Student’s Info</a>
+          <a class="nav__link" href="explore.html" aria-current="page">Explore</a>
+        </div>
+
+        <input class="nav-toggle" type="checkbox" id="navToggle" />
+        <label class="icon-btn burger" for="navToggle" aria-label="Open menu">
+          <span class="burger__icon" aria-hidden="true"></span>
+        </label>
+
+        <div class="mobile-panel">
+          <div class="mobile-panel__links" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact us</a>
+            <a href="apply.html">Apply</a>
+            <a href="student-info.html">Student’s Info</a>
+            <a href="explore.html">Explore</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero__glass">
+        <h1 id="page-title" class="hero__title">STUDENT LIFE</h1>
+        <p class="hero__subtitle">
+          Support, campuses, facilities, and services to help you succeed.
+        </p>
+      </div>
+      <div class="hero__media" aria-hidden="true"></div>
+    </section>
+
+    <!-- Content -->
+    <section class="section two-col">
+
+      <!-- Main -->
+      <div class="panel">
+        <h2>What student life includes</h2>
+        <p>
+          Student life is more than classes. It includes support services, learning spaces, wellbeing,
+          and opportunities that help you grow personally and professionally.
+        </p>
+
+        <div class="kpi-grid" style="margin-top: var(--space-2);">
+          <div class="kpi">
+            <p class="kpi-label">Support</p>
+            <p class="kpi-value">Guidance</p>
+          </div>
+          <div class="kpi">
+            <p class="kpi-label">Facilities</p>
+            <p class="kpi-value">Labs & spaces</p>
+          </div>
+          <div class="kpi">
+            <p class="kpi-label">Wellbeing</p>
+            <p class="kpi-value">Balance</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-3);">Key areas</h3>
+        <ul class="list">
+          <li><span>Student support</span><span class="muted">guidance and assistance</span></li>
+          <li><span>Facilities</span><span class="muted">workshops, labs, studios</span></li>
+          <li><span>Learning resources</span><span class="muted">library & study areas</span></li>
+          <li><span>Campus life</span><span class="muted">community and activities</span></li>
+        </ul>
+
+        <h3 style="margin-top: var(--space-3);">Quick FAQs</h3>
+
+        <div class="faq" style="margin-top: var(--space-2);">
+          <details>
+            <summary>Is there student support if I’m struggling?</summary>
+            <p>
+              Yes. Student support services can help with guidance, direction, and wellbeing. If you’re not sure where to start,
+              contact the college and they will point you to the right service.
+            </p>
+          </details>
+
+          <details>
+            <summary>What facilities can students use?</summary>
+            <p>
+              Facilities vary by institute and course, but typically include specialised labs, workshops, studios, and learning spaces
+              designed to match your subject area.
+            </p>
+          </details>
+
+          <details>
+            <summary>How do I find campus information?</summary>
+            <p>
+              You can explore student information pages, check your course details, or contact the college for directions and help.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Side -->
+      <aside class="panel">
+        <h3>Next steps</h3>
+        <p class="muted-note">
+          Want to learn more about student support or where you’ll study? Check Student’s Info or contact us.
+        </p>
+
+        <div class="form__actions">
+          <a class="btn btn--primary" href="student-info.html">Student’s Info</a>
+          <a class="btn btn--ghost" href="contact.html">Ask a question</a>
+        </div>
+
+        <div style="margin-top: var(--space-3);">
+          <a class="side-card__link" href="explore.html">← Back to Explore</a>
+        </div>
+      </aside>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>&copy; 2026 MCAST. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
