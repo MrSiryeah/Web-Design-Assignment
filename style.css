@@ -527,7 +527,8 @@ a{ text-decoration:none; color:inherit; }
   --rot-gap: 28px;
 
   position: relative;
-  width: min(100%, calc((var(--rot-size) * 3) + (var(--rot-gap) * 2)));
+  width: 100%;
+  max-width: calc((var(--rot-size) * 3) + (var(--rot-gap) * 2));
   height: var(--rot-size);
   margin: 0 auto;
 }
