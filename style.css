@@ -723,11 +723,6 @@ a{ text-decoration:none; color:inherit; }
   }
 }
 
-.field{
-  display: grid;
-  gap: .4rem;
-}
-
 .field__label{
   font-size: .9rem;
   font-weight: var(--fw-semibold);
@@ -917,6 +912,43 @@ a{ text-decoration:none; color:inherit; }
 /* =========================
    Contact page layout
    ========================= */
+
+/* Contact form styling */
+.contact-form{
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact-form .field span{
+  font-size: .9rem;
+  font-weight: var(--fw-semibold);
+  opacity: .85;
+}
+
+/* Inputs match your site style */
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  padding: .9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--c-line);
+  background: #fff;
+  font: inherit;
+  outline: none;
+  transition: border var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease);
+}
+
+.contact-form textarea{
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: rgba(0,0,67,.35);
+  box-shadow: 0 0 0 3px rgba(0,0,67,.14);
+}
 
 .contact{
   margin-top: var(--space-4);
@@ -1206,7 +1238,7 @@ a{ text-decoration:none; color:inherit; }
 
 /* Explore: search + filter pills */
 .field{
-  display:grid;
+  display: grid;
   gap: .4rem;
   margin-bottom: var(--space-2);
 }
