@@ -30,18 +30,19 @@
           </div>
 
           <input class="nav-toggle" type="checkbox" id="navToggle" />
-          <label class="icon-btn burger" for="navToggle" aria-label="Open menu">
+          <label class="icon-btn burger" for="navToggle">
+            <span class="sr-only">Open menu</span>
             <span class="burger__icon" aria-hidden="true"></span>
           </label>
 
           <div class="mobile-panel">
-            <div class="mobile-panel__links" aria-label="Mobile navigation">
+            <nav class="mobile-panel__links" aria-label="Mobile navigation">
               <a href="index.html">Home</a>
               <a href="contact.html">Contact us</a>
               <a href="apply.html">Apply</a>
               <a href="student-info.html">Student’s Info</a>
               <a href="explore.html">Explore</a>
-            </div>
+            </nav>
           </div>
         </nav>
       </div>
@@ -146,8 +147,8 @@
         <div class="two-col">
 
           <!-- Essantials Panel-->
-           <div class="panel" aria-label="Student essentials links">
-            <ul class="list">
+          <div class="panel">
+            <ul class="list" aria-label="Student essentials links">
               <li>
                 <span>Timetables</span>
                 <span class="muted">Check your schedule</span>
@@ -169,40 +170,46 @@
                 <span class="muted">Support & guidance</span>
               </li>
             </ul>
-           </div>
+          </div>
 
            <!-- FAQ panel-->
-            <div class="panel" aria-label="Frequently asked questions">
-              <div class="faq">
-                <details>
-                  <summary>How do I apply for course?</summary>
-                  <p>
-                    Go to the Apply page, choose your course, and follow the steps to submit your application.
-                  </p>
-                </details>
+        <div class="panel">
+          <h3 class="spotlight-title">Frequently asked questions</h3>
 
-                <details>
-                  <summary>Where can I find my timetable?</summary>
-                  <p>
-                    Timetables are usually shared through your institute and student portal. If you are unsure, ask your course coordinator.
-                  </p>
-                </details>
+          <div class="faq">
+            <details>
+              <summary>How do I apply for a course?</summary>
+              <p>
+                Go to the Apply page, choose your course, and follow the steps to submit your application.
+              </p>
+            </details>
 
-                <details>
-                  <summary>Who do I contact for support?</summary>
-                  <p>
-                    Student support services can help with learning support, wellbeing, and guidance. You can also use the Contact page for general enquiries.
-                  </p>
-                </details>
+            <details>
+              <summary>Where can I find my timetable?</summary>
+              <p>
+                Timetables are usually shared through your institute and student portal.
+                If you are unsure, ask your course coordinator.
+              </p>
+            </details>
 
-                <details>
-                  <summary>What services are available on compus?</summary>
-                  <p>
-                    Services can include library facilities, canteen areas, study spaces, and administrative offices depending on the campus.
-                  </p>
-                </details>
-              </div>
-            </div>
+            <details>
+              <summary>Who do I contact for support?</summary>
+              <p>
+                Student support services can help with learning support, wellbeing, and guidance.
+                You can also use the Contact page for general enquiries.
+              </p>
+            </details>
+
+            <details>
+              <summary>What services are available on campus?</summary>
+              <p>
+                Services can include library facilities, canteen areas, study spaces,
+                and administrative offices depending on the campus.
+              </p>
+            </details>
+          </div>
+        </div>
+
         </div>
        </section>
     </div>
