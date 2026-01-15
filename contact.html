@@ -74,33 +74,33 @@
               fill in the form below and we’ll get back to you.
             </p>
 
-            <form class="form" action="#" method="post">
-              <div class="form__row">
-                <div class="field">
-                  <label class="field__label" for="contactName">Full name</label>
-                  <input class="field__input" type="text" id="contactName" required />
-                </div>
+            <form class="contact-form"
+                  action="mailto:information@mcast.edu.mt?subject=MCAST%20Website%20Contact%20Form"
+                  method="post"
+                  enctype="text/plain"
+                  accept-charset="UTF-8">
 
-                <div class="field">
-                  <label class="field__label" for="contactEmail">Email</label>
-                  <input class="field__input" type="email" id="contactEmail" required />
-                </div>
-              </div>
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="Name" required>
+              </label>
 
-              <div class="field">
-                <label class="field__label" for="contactMessage">Message</label>
-                <textarea
-                  class="field__input field__textarea"
-                  id="contactMessage"
-                  rows="6"
-                  placeholder="How can we help you?"
-                ></textarea>
-              </div>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="Email" required>
+              </label>
 
-              <div class="form__actions">
-                <button class="btn btn--primary" type="submit">Send message</button>
-              </div>
+              <label class="field">
+                <span>Message</span>
+                <textarea name="Message" rows="5" required></textarea>
+              </label>
+
+              <button type="submit" class="btn btn-primary">SEND</button>
             </form>
+            <p class="contact-note">
+              If clicking “Send” doesn’t open your email app, you may not have a mail client set up.
+              You can email us directly at <a href="mailto:camilleriandrewfalzon@gmail.com">information@mcast.edu.mt</a>.
+            </p>
           </div>
 
           <!-- Contact details -->

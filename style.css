@@ -1276,3 +1276,13 @@ button:focus-visible,
 a:focus-visible{
   border-radius: 12px;
 }
+
+.contact-note{
+  margin-top: 12px;
+  font-size: .95rem;
+  opacity: .85;
+}
+
+.contact-note a{
+  text-decoration: underline;
+}
